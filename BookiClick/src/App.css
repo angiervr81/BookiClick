@@ -1,8 +1,11 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap');
+
 #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
   text-align: center;
+  font-family: 'Poppins', sans-serif;
 }
 
 .logo {
@@ -41,65 +44,138 @@
   color: #888;
 }
 
-/* App container */
 .app-container {
-  max-width: 700px;
-  margin: 0 auto;
-  font-family: Arial, sans-serif;
-  padding: 2rem;
-  text-align: center;
-}
-
-/* Discover Button */
-button {
-  padding: 10px 20px;
-  font-size: 1rem;
-  margin-bottom: 20px;
-  cursor: pointer;
-}
-
-/* Book Display styling */
-.book-display {
-  border: 1px solid #ddd;
-  padding: 20px;
-  margin-bottom: 20px;
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: 1rem;
+  gap: 2rem;
+  background-color: #1e1e1e;
+  color: #f0f0f0;
+  border-radius: 12px;
+  padding: 2rem;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25), 0 6px 20px rgba(0, 0, 0, 0.19);
+  margin-top: 2rem;
 }
 
-.book-info p {
-  margin: 5px 0;
+/* ---------- Title ---------- */
+h1 {
+  color: #fff;
+  font-weight: 600;
+  margin-bottom: 0.5rem;
+}
+p{
+  font-style: italic; 
+  color: #ccc;
+  max-width: 600px;
+  margin-bottom: 1.5rem;
+}
+h3 {
+  color: rgb(138, 17, 17);
+}
+
+/* ---------- Discover Button ---------- */
+button {
+  margin-top: 2rem;
+  background: linear-gradient(135deg, #222, #444);
+  color: #fff;
+  border: none;
+  border-radius: 12px;
+  padding: 12px 24px;
+  font-size: 1rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background 0.3s ease, transform 0.2s ease;
+}
+
+button:hover {
+  background: linear-gradient(135deg, #b68b2f, #e0b04f);
+  color: #000;
+  transform: scale(1.05);
+}
+
+
+button:active {
+  background-color: #0b0b0b;
+  box-shadow: 0 3px #666;
+  transform: translateY(4px);
+}
+
+/* ---------- Book Display ---------- */
+.book-display {
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 16px;
+  padding: 2rem;
+  width: 80%;
+  max-width: 400px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+  transition: transform 0.3s ease;
 }
 
 .book-cover {
-  max-width: 150px;
+  border-radius: 10px;
+  width: 160px;
   height: auto;
-  border: 1px solid #ccc;
+  margin-bottom: 1rem;
+}
+/* ---------- Book Info ---------- */
+.book-info p {
+  margin: 0.5rem 0;
+  color: #ddd;
 }
 
-/* Clickable attributes (e.g., author, category) */
+.book-info strong {
+  color: #f8f8f8;
+}
+
 .clickable {
-  color: #007bff;
-  text-decoration: underline;
+  background: #b68b2f;
+  color: #1e1e1e;
+  border-radius: 20px;
+  padding: 5px 12px;
+  margin: 0 5px;
   cursor: pointer;
+  transition: all 0.2s ease;
+  font-weight: 600;
 }
 
-/* Ban List section */
+.clickable:hover {
+  background: #d3a537;
+  color: #000;
+}
+/* ---------- Ban List ---------- */
 .banlist-container {
-  border-top: 1px solid #ddd;
-  padding-top: 10px;
-  margin-top: 20px;
-  text-align: left;
+  background: rgba(255, 255, 255, 0.05);
+  border-left: 1px solid rgba(255, 255, 255, 0.1);
+  padding: 2rem 1rem;
+  text-align: center;
+}
+
+.banlist-container h3 {
+  color: #fff;
+  margin-bottom: 1rem;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
 .banlist-item {
-  background: #eee;
-  margin: 5px;
-  padding: 5px 10px;
   display: inline-block;
-  border-radius: 10px;
+  background: #c56d5c;
+  color: #fff;
+  margin: 6px;
+  padding: 8px 16px;
+  border-radius: 12px;
   cursor: pointer;
-  user-select: none;
+  font-weight: 600;
+  transition: background 0.2s ease;
+}
+
+.banlist-item:hover {
+  background: #e17d6b;
+}
+.content-wrapper {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 2rem;
 }
