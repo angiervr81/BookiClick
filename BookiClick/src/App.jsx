@@ -2,6 +2,7 @@ import { useState } from "react";
 import DiscoverButton from "./components/DiscoverButton";
 import BookDisplay from "./components/BookDisplay/BookDisplay";
 import BanList from "./components/BanList";
+import HistoryDisplay from "./components/HistoryDisplay";
 import "./App.css";
 
 
@@ -10,6 +11,7 @@ const GOOGLE_BOOKS_API = 'https://www.googleapis.com/books/v1/volumes?q=subject:
 
 export default function App() {
   const [currentBook, setCurrentBook] = useState(null);
+  const [bookHistory, setBookHistory] = useState([]);
   const [banList, setBanList] = useState({ authors: [], categories: [] });
   const [loading, setLoading] = useState(false);
 
@@ -54,6 +56,7 @@ export default function App() {
 
       if (selected) {
         setCurrentBook(selected);
+        setBookHistory((prevHistory) => [...prevHistory, selected]);
       } else {
         const confirmReset = window.confirm("No book matched your filters. Reset ban list?");
         if (confirmReset) {
@@ -86,17 +89,44 @@ export default function App() {
 return (
   <div className="app-container">
     <h1>Book Discover</h1>
-        <p> Discover books from the wildest fiction genres! Click "Discover" to find a new book. If you don't like the author or category, ban them to avoid seeing them again. Happy discovering! </p>
+
+    <p> Discover books from the wildest fiction genres! 
+        Click "Discover" to find a new book. If you don't
+        like the author or category, ban them to avoid 
+        seeing them again. Happy discovering! 
+    </p>
+
     <DiscoverButton onClick={fetchRandomBook} loading={loading} />
-    <div className="content-wrapper">
-      {currentBook && (
-        <BookDisplay
-          book={currentBook}
-          onBanAuthor={() => addToBanList('authors', currentBook.author)}
-          onBanCategory={() => addToBanList('categories', currentBook.category)}
-        />
-      )}
-      <BanList banList={banList} onRemoveBan={removeFromBanList} />
+    
+      
+    <div className="main-content">
+      {/* Left: History */}
+      <div className="left-column">
+        {bookHistory.length > 0 && (
+          <>
+            <button className="clear-history-btn" onClick={() => setBookHistory([])}>
+              Clear History
+            </button>
+            <HistoryDisplay history={bookHistory} />
+          </>
+        )}
+      </div>
+
+      {/* Center: Current Book */}
+      <div className="center-column">
+        {currentBook && (
+          <BookDisplay
+            book={currentBook}
+            onBanAuthor={() => addToBanList('authors', currentBook.author)}
+            onBanCategory={() => addToBanList('categories', currentBook.category)}
+          />
+        )}
+      </div>
+
+      {/* Right: Ban List */}
+      <div className="right-column">
+        <BanList banList={banList} onRemoveBan={removeFromBanList} />
+      </div>
     </div>
   </div>
 );
