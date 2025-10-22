@@ -40,3 +40,66 @@
 .read-the-docs {
   color: #888;
 }
+
+/* App container */
+.app-container {
+  max-width: 700px;
+  margin: 0 auto;
+  font-family: Arial, sans-serif;
+  padding: 2rem;
+  text-align: center;
+}
+
+/* Discover Button */
+button {
+  padding: 10px 20px;
+  font-size: 1rem;
+  margin-bottom: 20px;
+  cursor: pointer;
+}
+
+/* Book Display styling */
+.book-display {
+  border: 1px solid #ddd;
+  padding: 20px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.book-info p {
+  margin: 5px 0;
+}
+
+.book-cover {
+  max-width: 150px;
+  height: auto;
+  border: 1px solid #ccc;
+}
+
+/* Clickable attributes (e.g., author, category) */
+.clickable {
+  color: #007bff;
+  text-decoration: underline;
+  cursor: pointer;
+}
+
+/* Ban List section */
+.banlist-container {
+  border-top: 1px solid #ddd;
+  padding-top: 10px;
+  margin-top: 20px;
+  text-align: left;
+}
+
+.banlist-item {
+  background: #eee;
+  margin: 5px;
+  padding: 5px 10px;
+  display: inline-block;
+  border-radius: 10px;
+  cursor: pointer;
+  user-select: none;
+}
