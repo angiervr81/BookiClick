@@ -2,6 +2,7 @@ import { useState } from "react";
 import DiscoverButton from "./components/DiscoverButton";
 import BookDisplay from "./components/BookDisplay/BookDisplay";
 import BanList from "./components/BanList";
+import "./App.css";
 
 
 
@@ -81,10 +82,13 @@ export default function App() {
     }));
   }
 
-  return (
-    <div className="app-container">
-      <h1>📚 Book Discoverer</h1>
-      <DiscoverButton onClick={fetchRandomBook} loading={loading} />
+
+return (
+  <div className="app-container">
+    <h1>Book Discover</h1>
+        <p> Discover books from the wildest fiction genres! Click "Discover" to find a new book. If you don't like the author or category, ban them to avoid seeing them again. Happy discovering! </p>
+    <DiscoverButton onClick={fetchRandomBook} loading={loading} />
+    <div className="content-wrapper">
       {currentBook && (
         <BookDisplay
           book={currentBook}
@@ -94,6 +98,8 @@ export default function App() {
       )}
       <BanList banList={banList} onRemoveBan={removeFromBanList} />
     </div>
-  );
+  </div>
+);
+
 }
 
