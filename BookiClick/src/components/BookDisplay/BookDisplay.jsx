@@ -1,5 +1,5 @@
-import Image from "./BookDisplay/Image";
-import Info from "./BookDisplay/Info";
+import Image from './Image';
+import Info from './Info';
 
 export default function BookDisplay({ book, onBanCategory, onBanAuthor }) {
   if (!book) return null;
