@@ -6,7 +6,7 @@ export default function BookDisplay({ book, onBanCategory, onBanAuthor }) {
 
   return (
     <div className="book-display">
-      <Image thumbnail={book.thumbnail} title={book.title} />
+      <Image image={book.image} title={book.title} />
       <Info book={book} onBanCategory={onBanCategory} onBanAuthor={onBanAuthor} />
     </div>
   );
