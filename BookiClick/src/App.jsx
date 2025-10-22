@@ -1,7 +1,8 @@
-import { useState } from 'react';
-import DiscoverButton from "./componets/DiscoverButton";
-import BookDisplay from "./componets/BookDisplay";
-import BanList from "./componets/BanList";
+import { useState } from "react";
+import DiscoverButton from "./components/DiscoverButton";
+import BookDisplay from "./components/BookDisplay/BookDisplay";
+import BanList from "./components/BanList";
+
 
 
 const GOOGLE_BOOKS_API = 'https://www.googleapis.com/books/v1/volumes?q=subject:fiction&maxResults=40';
