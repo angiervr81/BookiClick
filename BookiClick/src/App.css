@@ -55,6 +55,8 @@
   padding: 2rem;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.25), 0 6px 20px rgba(0, 0, 0, 0.19);
   margin-top: 2rem;
+
+
 }
 
 /* ---------- Title ---------- */
@@ -121,10 +123,20 @@ button:active {
 .book-info p {
   margin: 0.5rem 0;
   color: #ddd;
+  display: flex;
+  align-items: center;
+  justify-content: center; 
+  flex-wrap: wrap; 
+  gap: 0.5rem;
+  white-space: normal;
+  text-align: center;
+  word-break: break-word;
+   
 }
 
 .book-info strong {
   color: #f8f8f8;
+  flex-shrink: 0; 
 }
 
 .clickable {
@@ -136,6 +148,8 @@ button:active {
   cursor: pointer;
   transition: all 0.2s ease;
   font-weight: 600;
+  max-width: 100%; 
+  white-space: nowrap;
 }
 
 .clickable:hover {
@@ -178,4 +192,105 @@ button:active {
   justify-content: center;
   flex-wrap: wrap;
   gap: 2rem;
+}
+
+/* ---------- History Display ---------- */
+.history-section {
+  width: 100%;
+  margin-top: 3rem;
+  padding-top: 2rem;
+  border-top: 2px solid rgba(255, 255, 255, 0.1);
+  text-align: center;
+}
+
+.history-grid {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 2rem;
+}
+
+.clear-history-btn {
+  background-color: #8b2f2f;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin-bottom: 1rem;
+  font-weight: bold;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.clear-history-btn:hover {
+  background-color: #a63c3c;
+}
+
+.history-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+/* ----- Three-column main layout ----- */
+.main-content {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 2rem;
+  width: 100%;
+  margin-top: 2rem;
+}
+
+.left-column,
+.center-column,
+.right-column {
+  flex: 1;
+  max-width: 30%;
+  min-width: 250px;
+  overflow-y: auto;
+  max-height: 80vh;
+  background: rgba(255, 255, 255, 0.05);
+  border-radius: 12px;
+  padding: 1rem;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+
+/* Center column with book display */
+.center-column {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  background: transparent;
+  box-shadow: none;
+  padding: 0;
+  max-width: 40%;
+  flex-grow: 1;
+}
+
+/* History and banlist vertical layout */
+.left-column,
+.right-column {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Responsive layout for smaller screens */
+@media (max-width: 900px) {
+  .main-content {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .left-column,
+  .center-column,
+  .right-column {
+    max-width: 100%;
+    min-width: auto;
+    max-height: none;
+    overflow-y: visible;
+    padding: 0 1rem;
+    box-shadow: none;
+    background: transparent;
+  }
 }
