@@ -56,7 +56,7 @@ GIF created with ...
 
 ## Rescoures
 - API : [Google Books API](https://developers.google.com/books/docs/v1/using)
-- Theme Background: [Freepik]([https://www.freepik.com/search?format=search&last_filter=query&last_value=book&query=book](https://www.freepik.com/free-vector/books-seamless-pattern-doodle-outline-textbooks_21957290.htm#fromView=search&page=1&position=4&uuid=2806c3f3-7242-4db0-886f-939f5a741b70&query=book))
+- Theme Background: [Freepik]([https://www.freepik.com/search?format=search&last_filter=query&last_value=book&query=book](https://www.freepik.com/free-vector/books-seamless-pattern-doodle-outline-textbooks_21957290.htm#fromView=search&page=1&position=4&uuid=2806c3f3-7242-4db0-886f-939f5a741b70&query=book)
 - Fonts: [Google Font APT](https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap)
 
 ## Development Tools
