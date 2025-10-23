@@ -7,7 +7,7 @@ import "./App.css";
 
 
 
-const GOOGLE_BOOKS_API = 'https://www.googleapis.com/books/v1/volumes?q=subject:fiction&printType=books&maxResults=20';
+const GOOGLE_BOOKS_API = `https://www.googleapis.com/books/v1/volumes?q=subject:fiction&printType=books&maxResults=20&key=${import.meta.env.VITE_APP_BOOKS_API_KEY}`;
 
 export default function App() {
   const [currentBook, setCurrentBook] = useState(null);
