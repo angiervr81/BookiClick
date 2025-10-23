@@ -7,7 +7,7 @@ import "./App.css";
 
 
 
-const GOOGLE_BOOKS_API = 'https://www.googleapis.com/books/v1/volumes?q=subject:fiction&maxResults=40';
+const GOOGLE_BOOKS_API = 'https://www.googleapis.com/books/v1/volumes?q=subject:fiction&printType=books&maxResults=20';
 
 export default function App() {
   const [currentBook, setCurrentBook] = useState(null);
@@ -21,10 +21,9 @@ export default function App() {
       const response = await fetch(GOOGLE_BOOKS_API);
       const data = await response.json();
 
-      if (!data.items || !Array.isArray(data.items) || data.items.length === 0) {
+    if (!data.items || !Array.isArray(data.items) || data.items.length === 0) {
       throw new Error("No books found from the API.");
     }
-
       let tries = 0;
       let selected = null;
 
