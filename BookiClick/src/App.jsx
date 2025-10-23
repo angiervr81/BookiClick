@@ -21,6 +21,10 @@ export default function App() {
       const response = await fetch(GOOGLE_BOOKS_API);
       const data = await response.json();
 
+      if (!data.items || !Array.isArray(data.items) || data.items.length === 0) {
+      throw new Error("No books found from the API.");
+    }
+
       let tries = 0;
       let selected = null;
 
