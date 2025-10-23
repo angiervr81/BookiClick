@@ -51,7 +51,7 @@ GIF created with ...
 
 ## Future Features
 - Add more categories
-- A read list 
+- User can add books to a reading list 
 - Change history to wishlist
 
 ## Rescoures
